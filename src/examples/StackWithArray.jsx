@@ -10,6 +10,7 @@ import ToolsRow from '../layout/ToolsRow';
 import { recursiveTreeToArray } from '../helpers/arrays';
 import PageTitle from '../layout/PageTitle';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StackArrayExample = () => {
     function useForceUpdate() {
@@ -37,7 +38,7 @@ const StackArrayExample = () => {
 
     return (
         <Container>
-            <PageTitle>Stack with Array</PageTitle>
+            <PageTitle>Stacks (Array)</PageTitle>
             <Tools>
                 <ToolsRow>
                     <Input value={item} onChange={setItem} autoFocus={true} />
