@@ -4,25 +4,20 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import StackArrayExample from './examples/StackWithArray';
 import { ROUTES } from './services/routes';
+import Navigation from './components/Navigation';
 
 const AppWrapper = styled.div`
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const App = () => {
     return (
         <AppWrapper>
             <Router>
-                <ul>
-                    <li>
-                        <Link to={ROUTES.STACK}>Stack</Link>
-                    </li>
-                    <li>
-                        <Link to={ROUTES.STACK_ARRAY}>Stacks (Array)</Link>
-                    </li>
-                </ul>
-
+                <Navigation />
                 <Switch>
                     <Route path={ROUTES.STACK}>
                         <StackExample />

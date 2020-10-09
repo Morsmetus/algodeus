@@ -38,7 +38,7 @@ const StackArrayExample = () => {
 
     return (
         <Container>
-            <PageTitle>Stacks (Array)</PageTitle>
+            <PageTitle>Stack (Array)</PageTitle>
             <Tools>
                 <ToolsRow>
                     <Input value={item} onChange={setItem} autoFocus={true} />

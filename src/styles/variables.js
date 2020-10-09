@@ -5,5 +5,6 @@ export const theme = {
         danger: '#f7f7f7',
         red: '#f44336',
         white: '#ffffff',
+        dark: '#000000',
     },
 };
