@@ -26,8 +26,12 @@ export class Queue {
 
     dequeue() {
         if (this.length < 1) return;
+        if (this.first === this.last) {
+            this.last = null;
+        }
         this.first = this.first.next;
         this.length--;
+        return this;
     }
 
     isEmpty() {
