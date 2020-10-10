@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import StackArrayExample from './examples/StackWithArray';
 import { ROUTES } from './services/routes';
 import Navigation from './components/Navigation';
+import QueueExample from './examples/Queue';
 
 const AppWrapper = styled.div`
     display: flex;
@@ -24,6 +25,9 @@ const App = () => {
                     </Route>
                     <Route path={ROUTES.STACK_ARRAY}>
                         <StackArrayExample />
+                    </Route>
+                    <Route path={ROUTES.QUEUE}>
+                        <QueueExample />
                     </Route>
                 </Switch>
             </Router>

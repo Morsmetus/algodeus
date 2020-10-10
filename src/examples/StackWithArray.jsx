@@ -11,6 +11,7 @@ import { recursiveTreeToArray } from '../helpers/arrays';
 import PageTitle from '../layout/PageTitle';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import ToolsItem from '../layout/ToolsItem';
 
 const StackArrayExample = () => {
     function useForceUpdate() {
@@ -44,15 +45,21 @@ const StackArrayExample = () => {
                     <Input value={item} onChange={setItem} autoFocus={true} />
                 </ToolsRow>
                 <ToolsRow>
-                    <Button onClick={handlePush}>Push</Button>
-                    <Button danger={true} onClick={handlePop}>
-                        Pop
-                    </Button>
+                    <ToolsItem>
+                        <Button onClick={handlePush}>Push</Button>
+                    </ToolsItem>
+                    <ToolsItem>
+                        <Button danger={true} onClick={handlePop}>
+                            Pop
+                        </Button>
+                    </ToolsItem>
+                    <ToolsItem>
+                        <Button disabled>Peek</Button>
+                    </ToolsItem>
                 </ToolsRow>
             </Tools>
             <Visualizer items={stack.print()} />
             <Code>{stack}</Code>
-            <code></code>
         </Container>
     );
 };

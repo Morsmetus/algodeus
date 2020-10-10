@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Astronaut from '../components/Icons/Astronaut';
 
 const StyledVisualizer = styled.div`
-    background: #f7f7f7;
+    background: ${(props) => props.theme.colors.backgroundGray};
     flex: 1;
-    min-height: 200px;
+    min-height: 100px;
     padding: 8px 16px;
     border-radius: 8px;
     margin-bottom: 8px;

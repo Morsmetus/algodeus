@@ -9,56 +9,59 @@ import Visualizer from '../layout/Visualizer';
 import ToolsRow from '../layout/ToolsRow';
 import { recursiveTreeToArray } from '../helpers/arrays';
 import PageTitle from '../layout/PageTitle';
+import { Queue } from '../data-structures/Queue';
 import ToolsItem from '../layout/ToolsItem';
 
-const StackExample = () => {
+const QueueExample = () => {
     function useForceUpdate() {
         const [value, setValue] = useState(0);
         return () => setValue((value) => ++value);
     }
     const forceUpdate = useForceUpdate();
 
-    const [stack, setStack] = useState(new Stack());
+    const [queue, setQueue] = useState(new Queue());
     const [item, setItem] = useState('');
 
-    const handlePush = () => {
+    const handleEnqueue = () => {
         if (item.length < 1) return;
-        stack.push(item);
+        queue.enqueue(item);
         setItem('');
         forceUpdate();
     };
 
-    const handlePop = () => {
-        stack.pop();
+    const handleDequeue = () => {
+        queue.dequeue();
         setItem('');
         forceUpdate();
     };
 
     return (
         <Container>
-            <PageTitle>Stack</PageTitle>
+            <PageTitle>Queue</PageTitle>
             <Tools>
                 <ToolsRow>
                     <Input value={item} onChange={setItem} autoFocus={true} />
                 </ToolsRow>
                 <ToolsRow>
                     <ToolsItem>
-                        <Button onClick={handlePush}>Push</Button>
+                        <Button onClick={handleEnqueue}>Enqueue</Button>
                     </ToolsItem>
                     <ToolsItem>
-                        <Button danger={true} onClick={handlePop}>
-                            Pop
+                        <Button danger={true} onClick={handleDequeue}>
+                            Dequeue
                         </Button>
                     </ToolsItem>
                     <ToolsItem>
-                        <Button disabled>Peek</Button>
+                        <Button disabled onClick={handleEnqueue}>
+                            Peek
+                        </Button>
                     </ToolsItem>
                 </ToolsRow>
             </Tools>
-            <Visualizer items={recursiveTreeToArray(stack.top)} />
-            <Code>{stack}</Code>
+            <Visualizer items={recursiveTreeToArray(queue.first)} />
+            <Code>{queue}</Code>
         </Container>
     );
 };
 
-export default StackExample;
+export default QueueExample;
