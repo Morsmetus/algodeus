@@ -2,10 +2,13 @@
   "name": "algodeus",
   "version": "1.0.0",
   "description": "",
+  "homepage": "http://morsmetus.github.io/algodeus",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
     "prettier": "2.1.2",
     "webpack": "^4.44.2",
