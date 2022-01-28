@@ -1,37 +1,19 @@
 import React, { useState } from 'react';
-import { Stack } from 'data-structures/Stack';
-import Input from 'components/Input';
-import Container from 'layout/Container';
-import Code from 'layout/Code';
-import Button from 'components/Button';
-import styled from 'styled-components';
-
-const StyledActionContent = styled.div`
-    width: 80%;
-`;
-
-const StyledCreateArea = styled.div`
-    background: #f7f7f7;
-    width: 80%;
-    margin-bottom: 16px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    justify-content: center;
-    display: flex;
-`;
-
-const StyledInputArea = styled.div`
-    display: flex;
-    margin-bottom: 8px;
-`;
-
-const StyledAction = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-`;
+import { Input, Button } from 'components';
+import {
+    Visualizer,
+    Code,
+    Container,
+    Tools,
+    PageTitle,
+    ToolsItem,
+    ToolsRow,
+} from 'layout';
+import { recursiveTreeToArray } from 'helpers/arrays';
+import { LinkedList } from 'data-structures/LinkedList';
 
 export const LinkedListExample = () => {
-    const [stack, setStack] = useState(new Stack());
+    const [linkedList] = useState(new LinkedList());
     const [item, setItem] = useState('');
 
     function useForceUpdate() {
@@ -41,39 +23,42 @@ export const LinkedListExample = () => {
 
     const forceUpdate = useForceUpdate();
 
-    const handlePush = () => {
+    const onAppend = () => {
         if (item.length < 1) return;
-        stack.push(item);
+        linkedList.append(item);
         setItem('');
         forceUpdate();
     };
 
     const handlePop = () => {
-        stack.pop();
+        linkedList.pop();
         setItem('');
         forceUpdate();
     };
 
     return (
         <Container>
-            <StyledCreateArea>
-                <StyledActionContent>
-                    <StyledInputArea>
-                        <Input
-                            value={item}
-                            onChange={(e) => setItem(e.target.value)}
-                            autoFocus={true}
-                        />
-                    </StyledInputArea>
-                    <StyledAction>
-                        <Button onClick={handlePush}>Add</Button>
+            <PageTitle>Linked List</PageTitle>
+            <Tools>
+                <ToolsRow>
+                    <Input value={item} onChange={setItem} autoFocus={true} />
+                </ToolsRow>
+                <ToolsRow>
+                    <ToolsItem>
+                        <Button onClick={onAppend}>Append</Button>
+                    </ToolsItem>
+                    <ToolsItem>
                         <Button danger={true} onClick={handlePop}>
-                            Remove
+                            Pop
                         </Button>
-                    </StyledAction>
-                </StyledActionContent>
-            </StyledCreateArea>
-            <Code>{JSON.stringify(stack, undefined, 4)}</Code>
+                    </ToolsItem>
+                    <ToolsItem>
+                        <Button disabled>Peek</Button>
+                    </ToolsItem>
+                </ToolsRow>
+            </Tools>
+            <Visualizer items={recursiveTreeToArray(linkedList.head)} />
+            <Code>{linkedList}</Code>
         </Container>
     );
 };

@@ -7,8 +7,6 @@ const StyledPageTitle = styled.div`
     font-family: monospace;
 `;
 
-const PageTitle = ({ children }) => {
+export const PageTitle = ({ children }) => {
     return <StyledPageTitle>{children}</StyledPageTitle>;
 };
-
-export default PageTitle;

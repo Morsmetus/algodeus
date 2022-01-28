@@ -10,12 +10,10 @@ const StyledCode = styled.div`
     cursor: pointer;
 `;
 
-const Code = ({ children }) => {
+export const Code = ({ children }) => {
     return (
         <StyledCode>
             <pre>{JSON.stringify(children, undefined, 4)}</pre>
         </StyledCode>
     );
 };
-
-export default Code;

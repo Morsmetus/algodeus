@@ -10,8 +10,6 @@ const StyledTools = styled.div`
     flex-direction: column;
 `;
 
-const Tools = ({ children }) => {
+export const Tools = ({ children }) => {
     return <StyledTools>{children}</StyledTools>;
 };
-
-export default Tools;

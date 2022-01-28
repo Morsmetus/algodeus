@@ -6,8 +6,6 @@ const StyledToolsRow = styled.div`
     margin-bottom: 8px;
 `;
 
-const ToolsRow = ({ children }) => {
+export const ToolsRow = ({ children }) => {
     return <StyledToolsRow>{children}</StyledToolsRow>;
 };
-
-export default ToolsRow;

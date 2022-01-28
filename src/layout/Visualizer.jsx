@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Astronaut from 'components/Icons/Astronaut';
+import Astronaut from 'components/Icons/packs/Astronaut';
 
 const StyledVisualizer = styled.div`
     background: ${(props) => props.theme.colors.backgroundGray};
@@ -57,7 +57,7 @@ const StyledIcon = styled.div`
     margin-bottom: 8px;
 `;
 
-const Visualizer = ({ items }) => {
+export const Visualizer = ({ items }) => {
     return (
         <StyledVisualizer>
             {items
@@ -76,5 +76,3 @@ const Visualizer = ({ items }) => {
         </StyledVisualizer>
     );
 };
-
-export default Visualizer;

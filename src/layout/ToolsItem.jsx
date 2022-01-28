@@ -5,8 +5,6 @@ const StyledToolsItem = styled.div`
     margin-right: 8px;
 `;
 
-const ToolsItem = ({ children }) => {
+export const ToolsItem = ({ children }) => {
     return <StyledToolsItem>{children}</StyledToolsItem>;
 };
-
-export default ToolsItem;

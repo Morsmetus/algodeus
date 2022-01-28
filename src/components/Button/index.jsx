@@ -20,12 +20,10 @@ const StyledButton = styled.button`
     }
 `;
 
-const Button = ({ text, children, onClick, danger, disabled }) => {
+export const Button = ({ text, children, onClick, danger, disabled }) => {
     return (
         <StyledButton danger={danger} onClick={onClick} disabled={disabled}>
             {text ? text : children}
         </StyledButton>
     );
 };
-
-export default Button;

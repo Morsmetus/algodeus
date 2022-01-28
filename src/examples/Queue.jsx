@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import Input from 'components/Input';
-import Container from 'layout/Container';
-import Code from 'layout/Code';
-import Button from 'components/Button';
-import Tools from 'layout/Tools';
-import Visualizer from 'layout/Visualizer';
-import ToolsRow from 'layout/ToolsRow';
+import { Input, Button } from 'components';
+import {
+    Visualizer,
+    Code,
+    Container,
+    Tools,
+    PageTitle,
+    ToolsItem,
+    ToolsRow,
+} from 'layout';
 import { recursiveTreeToArray } from 'helpers/arrays';
-import PageTitle from 'layout/PageTitle';
 import { Queue } from 'data-structures/Queue';
-import ToolsItem from 'layout/ToolsItem';
 
 export const QueueExample = () => {
     function useForceUpdate() {
@@ -18,7 +19,7 @@ export const QueueExample = () => {
     }
     const forceUpdate = useForceUpdate();
 
-    const [queue, setQueue] = useState(new Queue());
+    const [queue] = useState(new Queue());
     const [item, setItem] = useState('');
 
     const handleEnqueue = () => {

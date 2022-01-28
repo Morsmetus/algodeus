@@ -9,7 +9,7 @@ const StyledNavigation = styled.div`
     margin-bottom: 16px;
 `;
 
-const Navigation = () => {
+export const Navigation = () => {
     return (
         <StyledNavigation>
             <NavigationItem title={'Stack'} url={ROUTES.STACK} />
@@ -20,5 +20,3 @@ const Navigation = () => {
         </StyledNavigation>
     );
 };
-
-export default Navigation;

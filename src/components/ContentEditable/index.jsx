@@ -13,7 +13,7 @@ const StyledCodeArea = styled.div`
     }
 `;
 
-const ContentEditable = ({ onChange }) => {
+export const Index = ({ onChange }) => {
     return (
         <StyledCodeArea
             contentEditable={true}

@@ -9,7 +9,7 @@ const StyledInput = styled.input`
     outline: none;
 `;
 
-const Input = ({ value, onChange, autoFocus }) => {
+export const Input = ({ value, onChange, autoFocus }) => {
     return (
         <StyledInput
             value={value}
@@ -18,5 +18,3 @@ const Input = ({ value, onChange, autoFocus }) => {
         />
     );
 };
-
-export default Input;

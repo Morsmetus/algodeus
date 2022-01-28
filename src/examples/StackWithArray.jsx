@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { Input, Button } from 'components';
+import {
+    Visualizer,
+    Code,
+    Container,
+    Tools,
+    PageTitle,
+    ToolsItem,
+    ToolsRow,
+} from 'layout';
 import { StackWithArray } from 'data-structures/Stack';
-import Input from 'components/Input';
-import Container from 'layout/Container';
-import Code from 'layout/Code';
-import Button from 'components/Button';
-import Tools from 'layout/Tools';
-import Visualizer from 'layout/Visualizer';
-import ToolsRow from 'layout/ToolsRow';
-import PageTitle from 'layout/PageTitle';
-import ToolsItem from 'layout/ToolsItem';
 
 export const StackArrayExample = () => {
     function useForceUpdate() {

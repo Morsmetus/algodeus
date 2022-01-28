@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { Stack } from 'data-structures/Stack';
-import Input from 'components/Input';
-import Container from 'layout/Container';
-import Code from 'layout/Code';
-import Button from 'components/Button';
-import Tools from 'layout/Tools';
-import Visualizer from 'layout/Visualizer';
-import ToolsRow from 'layout/ToolsRow';
+import { Input, Button } from 'components';
+import {
+    Visualizer,
+    Code,
+    Container,
+    Tools,
+    PageTitle,
+    ToolsItem,
+    ToolsRow,
+} from 'layout';
 import { recursiveTreeToArray } from 'helpers/arrays';
-import PageTitle from 'layout/PageTitle';
-import ToolsItem from 'layout/ToolsItem';
+import { Stack } from 'data-structures/Stack';
 
 export const StackExample = () => {
     function useForceUpdate() {
@@ -18,7 +19,7 @@ export const StackExample = () => {
     }
     const forceUpdate = useForceUpdate();
 
-    const [stack, setStack] = useState(new Stack());
+    const [stack] = useState(new Stack());
     const [item, setItem] = useState('');
 
     const handlePush = () => {

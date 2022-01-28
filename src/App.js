@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ROUTES } from 'services/routes';
-import Navigation from 'components/Navigation';
+import { Navigation } from 'components';
 import {
     LinkedListExample,
     QueueExample,
