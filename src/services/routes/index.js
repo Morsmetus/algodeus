@@ -4,5 +4,6 @@ export const ROUTES = {
     QUEUE: '/queue',
     LINKED_LIST: '/linked-list',
     HASH_MAP: '/hash-map',
+    BINARY_SEARCH_TREE: '/binary-search-tree',
     NODE: '/node',
 };

@@ -8,6 +8,7 @@ import {
     QueueExample,
     StackExample,
     StackArrayExample,
+    BinarySearchTreeExample,
 } from 'examples';
 
 const AppWrapper = styled.div`
@@ -33,6 +34,10 @@ const App = () => {
                     <Route
                         path={ROUTES.LINKED_LIST}
                         element={<LinkedListExample />}
+                    />
+                    <Route
+                        path={ROUTES.BINARY_SEARCH_TREE}
+                        element={<BinarySearchTreeExample />}
                     />
                 </Routes>
             </BrowserRouter>

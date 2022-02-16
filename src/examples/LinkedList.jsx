@@ -30,7 +30,7 @@ export const LinkedListExample = () => {
         forceUpdate();
     };
 
-    const handlePop = () => {
+    const onPop = () => {
         linkedList.pop();
         setItem('');
         forceUpdate();
@@ -48,7 +48,7 @@ export const LinkedListExample = () => {
                         <Button onClick={onAppend}>Append</Button>
                     </ToolsItem>
                     <ToolsItem>
-                        <Button danger={true} onClick={handlePop}>
+                        <Button danger={true} onClick={onPop}>
                             Pop
                         </Button>
                     </ToolsItem>

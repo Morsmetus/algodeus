@@ -8,6 +8,7 @@ const StyledCode = styled.div`
     border-radius: 8px;
     border: 2px dotted #e2e2e2;
     cursor: pointer;
+    margin-bottom: 16px;
 `;
 
 export const Code = ({ children }) => {

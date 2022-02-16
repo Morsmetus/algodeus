@@ -22,14 +22,14 @@ export const StackArrayExample = () => {
     const [stack, setStack] = useState(new StackWithArray());
     const [item, setItem] = useState('');
 
-    const handlePush = () => {
+    const onPush = () => {
         if (item.length < 1) return;
         stack.push(item);
         setItem('');
         forceUpdate();
     };
 
-    const handlePop = () => {
+    const onPop = () => {
         stack.pop();
         setItem('');
         forceUpdate();
@@ -44,10 +44,10 @@ export const StackArrayExample = () => {
                 </ToolsRow>
                 <ToolsRow>
                     <ToolsItem>
-                        <Button onClick={handlePush}>Push</Button>
+                        <Button onClick={onPush}>Push</Button>
                     </ToolsItem>
                     <ToolsItem>
-                        <Button danger={true} onClick={handlePop}>
+                        <Button danger={true} onClick={onPop}>
                             Pop
                         </Button>
                     </ToolsItem>

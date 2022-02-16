@@ -22,14 +22,14 @@ export const QueueExample = () => {
     const [queue] = useState(new Queue());
     const [item, setItem] = useState('');
 
-    const handleEnqueue = () => {
+    const onEnqueue = () => {
         if (item.length < 1) return;
         queue.enqueue(item);
         setItem('');
         forceUpdate();
     };
 
-    const handleDequeue = () => {
+    const onDequeue = () => {
         queue.dequeue();
         setItem('');
         forceUpdate();
@@ -44,15 +44,15 @@ export const QueueExample = () => {
                 </ToolsRow>
                 <ToolsRow>
                     <ToolsItem>
-                        <Button onClick={handleEnqueue}>Enqueue</Button>
+                        <Button onClick={onEnqueue}>Enqueue</Button>
                     </ToolsItem>
                     <ToolsItem>
-                        <Button danger={true} onClick={handleDequeue}>
+                        <Button danger={true} onClick={onDequeue}>
                             Dequeue
                         </Button>
                     </ToolsItem>
                     <ToolsItem>
-                        <Button disabled onClick={handleEnqueue}>
+                        <Button disabled onClick={onEnqueue}>
                             Peek
                         </Button>
                     </ToolsItem>

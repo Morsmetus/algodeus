@@ -17,6 +17,10 @@ export const Navigation = () => {
             <NavigationItem title={'Queue'} url={ROUTES.QUEUE} />
             <NavigationItem title={'Linked List'} url={ROUTES.LINKED_LIST} />
             <NavigationItem title={'Hash Map'} url={ROUTES.HASH_MAP} />
+            <NavigationItem
+                title={'Binary Search Tree'}
+                url={ROUTES.BINARY_SEARCH_TREE}
+            />
         </StyledNavigation>
     );
 };
